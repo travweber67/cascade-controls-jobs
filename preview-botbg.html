@@ -159,7 +159,13 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 20px 36px}
 .page-home .empband .in{background:rgba(23,28,31,.86);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border:1px solid rgba(244,140,6,.22);border-radius:18px;padding:26px 28px;box-shadow:var(--shadow)}
 .page-home .hero{background:transparent;background-image:none}
 .page-home .hero-inner{padding:24px 20px 4px}
-.hero-card{background:rgba(18,21,23,.82);-webkit-backdrop-filter:blur(16px) saturate(1.25);backdrop-filter:blur(16px) saturate(1.25);border:1px solid rgba(244,140,6,.24);border-radius:20px;padding:32px 32px 26px;box-shadow:var(--shadow)}
+.hero-more{display:contents}
+.sub-lead{display:inline}
+.sub-rest{display:inline}
+.hero-toggle{display:none;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:11px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(244,140,6,.38);border-radius:10px;color:#f5f7f8;font:inherit;font-weight:600;cursor:pointer}
+.hero-toggle .chev{width:9px;height:9px;flex:none;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);transition:transform .35s ease}
+.hero-card.open .hero-toggle .chev{transform:rotate(225deg) translate(-1px,-1px)}
+.hero-card{-webkit-backdrop-filter:blur(16px) saturate(1.25);backdrop-filter:blur(16px) saturate(1.25);border:1px solid rgba(244,140,6,.24);border-radius:20px;padding:32px 32px 26px;box-shadow:var(--shadow)}
 .page-home .stat{background:rgba(255,255,255,.07)}
 .page-home .searchbar{background:rgba(35,41,45,.78);border-color:rgba(255,255,255,.14);box-shadow:none}
 .page-home .wrap{padding-top:22px}
@@ -172,6 +178,11 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 20px 36px}
 .page-home .panel-light,.page-home .alertband{background:rgba(27,32,35,.86);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border-color:rgba(244,140,6,.16)}
 .page-home .empty{background:rgba(27,32,35,.85);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 @media(max-width:700px){
+  .sub-lead{display:block;margin:0 0 10px}
+  .sub-rest{display:block;margin:0 0 16px}
+  .hero-more{display:block;max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .35s ease}
+  .hero-card.open .hero-more{max-height:460px;opacity:1}
+  .hero-toggle{display:flex}
   .bot-bg-media{left:0;top:0;width:100%;height:100%;background-position:50% 6%;transform:scale(1.06) translateY(-3%)}
   .bot-bg-scrim{background:linear-gradient(180deg,rgba(18,21,23,.72) 0,rgba(18,21,23,.52) 38%,rgba(18,21,23,.60) 72%,rgba(18,21,23,.84) 100%)}
   .hero-card{padding:22px 18px 18px}
@@ -181,6 +192,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 20px 36px}
 }
 @media (prefers-reduced-motion: reduce){
   .bot-bg-media spline-viewer{display:none}
+  .hero-more{transition:none}
 }
 </style>
 </head>
@@ -209,11 +221,14 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 20px 36px}
 <section class="hero"><div class="hero-inner">
 <div class="hero-card">
 <h1>The national job board for <em>controls &amp; industrial maintenance</em> techs</h1>
-<p class="sub">No warehouse noise. No generic listings. Just PLC, controls, electrical, and maintenance roles at plants and facilities hiring across the United States, region by region.</p>
+<p class="sub sub-lead">No warehouse noise. No generic listings.</p>
+<div class="hero-more" id="heroMore">
+<p class="sub sub-rest">Just PLC, controls, electrical, and maintenance roles at plants and facilities hiring across the United States, region by region.</p>
 <div class="stats">
 <div class="stat"><b>251</b><span>Verified openings</span></div>
 <div class="stat"><b>26 states</b><span>Regions covered</span></div>
 <div class="stat"><b>Nov 11, 2026</b><span>Last verified</span></div>
+</div>
 </div>
 <form class="searchbar" onsubmit="return filterJobs()">
 <div><label for="q">Keyword — title, company, trade</label><input id="q" type="search" placeholder="e.g. electrician, PLC, Intel, maintenance…" autocomplete="off" oninput="filterJobs()"></div>
@@ -222,6 +237,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 20px 36px}
 <div class="go"><button class="btn" type="submit" style="width:100%">Search Jobs</button></div>
 </form>
 <p class="tryrow">Try: <button type="button" class="quick" onclick="quickSearch('electrician')">Electrician</button> · <button type="button" class="quick" onclick="quickSearch('controls')">Controls</button> · <button type="button" class="quick" onclick="quickSearch('technician')">Technician</button> · <button type="button" class="quick" onclick="quickSearch('')">Show all</button></p>
+<button type="button" class="hero-toggle" id="heroToggle" aria-expanded="false" aria-controls="heroMore" onclick="heroToggleFn(this)"><span class="hero-toggle-label">More</span><span class="chev" aria-hidden="true"></span></button>
 </div></div></section>
 <div class="wrap" id="jobs">
 <div class="section-head">
@@ -1522,6 +1538,7 @@ document.getElementById('resultCount').textContent=n+(n===1?' job':' jobs');
 document.getElementById('noresults').style.display=n?'none':'block';
 document.getElementById('grid').style.display=n?'grid':'none';return false;}
 function quickSearch(v){document.getElementById('q').value=v;filterJobs();document.getElementById('jobs').scrollIntoView({behavior:'smooth'});}
+function heroToggleFn(b){var c=b.closest('.hero-card');var o=c.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');var l=b.querySelector('.hero-toggle-label');if(l)l.textContent=o?'Less':'More';}
 function clearFilters(){document.getElementById('q').value='';document.getElementById('city').value='';document.getElementById('state').value='';filterJobs();}
 </script>
 
