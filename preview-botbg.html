@@ -149,14 +149,14 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 20px 36px}
    scoped to body.page-home (homepage only) so job, city, and roundup pages
    keep the standard design. */
 .page-home .topbar{position:relative;z-index:2}
-.page-home footer{position:relative;z-index:1;background:rgba(18,21,23,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.page-home footer{position:relative;z-index:1;background:rgba(18,21,23,.72);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 .page-content{position:relative;z-index:1}
 .bot-bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:#121517}
-.bot-bg-media{position:absolute;left:0;top:-6%;width:135%;height:112%;background-size:cover;background-position:50% 8%}
+.bot-bg-media{position:absolute;left:0;top:0;width:100%;height:100%;background-size:cover;background-position:50% 50%}
 .bot-bg-media spline-viewer{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
-.bot-bg-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,21,23,.50) 0,rgba(18,21,23,.16) 24%,rgba(18,21,23,.30) 68%,rgba(18,21,23,.74) 100%),linear-gradient(95deg,rgba(18,21,23,.84) 0%,rgba(18,21,23,.46) 48%,rgba(18,21,23,.14) 78%,rgba(18,21,23,.34) 100%)}
+.bot-bg-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,21,23,.36) 0,rgba(18,21,23,.05) 24%,rgba(18,21,23,.16) 68%,rgba(18,21,23,.58) 100%),linear-gradient(95deg,rgba(18,21,23,.62) 0%,rgba(18,21,23,.28) 48%,rgba(18,21,23,.05) 78%,rgba(18,21,23,.20) 100%)}
 .page-home .empband{background:transparent;border-bottom:0;padding:20px 20px 0}
-.page-home .empband .in{background:rgba(23,28,31,.86);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border:1px solid rgba(244,140,6,.22);border-radius:18px;padding:26px 28px;box-shadow:var(--shadow)}
+.page-home .empband .in{background:rgba(23,28,31,.66);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(244,140,6,.22);border-radius:18px;padding:26px 28px;box-shadow:var(--shadow)}
 .page-home .hero{background:transparent;background-image:none}
 .page-home .hero-inner{padding:24px 20px 4px}
 .hero-more{display:contents}
@@ -165,26 +165,33 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 20px 36px}
 .hero-toggle{display:none;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:11px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(244,140,6,.38);border-radius:10px;color:#f5f7f8;font:inherit;font-weight:600;cursor:pointer}
 .hero-toggle .chev{width:9px;height:9px;flex:none;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);transition:transform .35s ease}
 .hero-card.open .hero-toggle .chev{transform:rotate(225deg) translate(-1px,-1px)}
-.hero-card{-webkit-backdrop-filter:blur(16px) saturate(1.25);backdrop-filter:blur(16px) saturate(1.25);border:1px solid rgba(244,140,6,.24);border-radius:20px;padding:32px 32px 26px;box-shadow:var(--shadow)}
+.hero-card{background:rgba(18,21,23,.60);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(244,140,6,.24);border-radius:20px;padding:32px 32px 26px;box-shadow:var(--shadow)}
 .page-home .stat{background:rgba(255,255,255,.07)}
 .page-home .searchbar{background:rgba(35,41,45,.78);border-color:rgba(255,255,255,.14);box-shadow:none}
 .page-home .wrap{padding-top:22px}
 .page-home .grid{gap:16px}
 .page-home .section-head h2{text-shadow:0 2px 16px rgba(0,0,0,.65)}
 .page-home .section-head p{color:#c6cfd4;text-shadow:0 1px 10px rgba(0,0,0,.65)}
-.page-home .card{background:rgba(27,32,35,.84);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border-color:rgba(244,140,6,.16);box-shadow:0 12px 32px rgba(0,0,0,.38)}
+.page-home .card{background:rgba(27,32,35,.64);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border-color:rgba(244,140,6,.16);box-shadow:0 12px 32px rgba(0,0,0,.38)}
 .page-home .card:hover{border-color:rgba(244,140,6,.45)}
-.page-home .panel-dark,.page-home .empcard{background:rgba(23,28,31,.88);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border:1px solid rgba(244,140,6,.20)}
-.page-home .panel-light,.page-home .alertband{background:rgba(27,32,35,.86);-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border-color:rgba(244,140,6,.16)}
-.page-home .empty{background:rgba(27,32,35,.85);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.page-home .panel-dark,.page-home .empcard{background:rgba(23,28,31,.70);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(244,140,6,.20)}
+.page-home .panel-light,.page-home .alertband{background:rgba(27,32,35,.68);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border-color:rgba(244,140,6,.16)}
+.page-home .empty{background:rgba(27,32,35,.68);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 @media(max-width:700px){
   .sub-lead{display:block;margin:0 0 10px}
   .sub-rest{display:block;margin:0 0 16px}
   .hero-more{display:block;max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .35s ease}
   .hero-card.open .hero-more{max-height:460px;opacity:1}
   .hero-toggle{display:flex}
-  .bot-bg-media{left:0;top:0;width:100%;height:100%;background-position:50% 6%;transform:scale(1.06) translateY(-3%)}
-  .bot-bg-scrim{background:linear-gradient(180deg,rgba(18,21,23,.72) 0,rgba(18,21,23,.52) 38%,rgba(18,21,23,.60) 72%,rgba(18,21,23,.84) 100%)}
+  .page-home .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .page-home .card{padding:12px;gap:7px;border-radius:12px}
+  .page-home .card .co{font-size:11px}
+  .page-home .card h3{font-size:15.5px;line-height:1.22}
+  .page-home .card .loc{font-size:13px}
+  .page-home .card-foot{flex-direction:column;gap:7px}
+  .page-home .card-foot .btn{width:100%;text-align:center;padding:9px 6px;font-size:14px}
+  .bot-bg-media{left:0;top:0;width:100%;height:100%;background-position:50% 50%;transform:none}
+  .bot-bg-scrim{background:linear-gradient(180deg,rgba(18,21,23,.55) 0,rgba(18,21,23,.34) 38%,rgba(18,21,23,.42) 72%,rgba(18,21,23,.68) 100%)}
   .hero-card{padding:22px 18px 18px}
   .page-home .empband{padding:14px 16px 0}
   .page-home .empband .in{padding:20px}
@@ -1539,6 +1546,38 @@ document.getElementById('noresults').style.display=n?'none':'block';
 document.getElementById('grid').style.display=n?'grid':'none';return false;}
 function quickSearch(v){document.getElementById('q').value=v;filterJobs();document.getElementById('jobs').scrollIntoView({behavior:'smooth'});}
 function heroToggleFn(b){var c=b.closest('.hero-card');var o=c.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');var l=b.querySelector('.hero-toggle-label');if(l)l.textContent=o?'Less':'More';}
+/* The background viewer keeps pointer-events:none so cards stay
+     clickable; forward the visitor's pointer into it (host + shadow
+     canvas) so the scene's built-in look-at follows them anyway. */
+  (function () {
+    var v = document.querySelector('.bot-bg spline-viewer');
+    if (!v) return;
+    function targets() {
+      var list = [v];
+      try {
+        var c = v.shadowRoot && v.shadowRoot.querySelector('canvas');
+        if (c) list.push(c);
+      } catch (e) {}
+      return list;
+    }
+    function fwd(type, x, y, ptype) {
+      var opts = { bubbles: true, cancelable: true, composed: true, clientX: x, clientY: y, screenX: x, screenY: y, pointerId: 1, isPrimary: true, pointerType: ptype || 'mouse', button: 0, buttons: type === 'pointerdown' ? 1 : 0 };
+      var ev;
+      try { ev = new PointerEvent(type, opts); } catch (e) { ev = new MouseEvent(type === 'pointerdown' ? 'mousedown' : 'mousemove', opts); }
+      var ts = targets();
+      for (var i = 0; i < ts.length; i++) { try { ts[i].dispatchEvent(ev); } catch (e) {} }
+    }
+    var last = 0;
+    window.addEventListener('pointermove', function (e) {
+      var n = Date.now();
+      if (n - last < 40) return;
+      last = n;
+      fwd('pointermove', e.clientX, e.clientY, e.pointerType);
+    }, { passive: true });
+    window.addEventListener('pointerdown', function (e) {
+      fwd('pointerdown', e.clientX, e.clientY, e.pointerType);
+    }, { passive: true });
+  })();
 function clearFilters(){document.getElementById('q').value='';document.getElementById('city').value='';document.getElementById('state').value='';filterJobs();}
 </script>
 
